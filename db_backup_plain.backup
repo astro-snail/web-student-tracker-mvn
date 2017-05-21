@@ -1,0 +1,139 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.5.3
+-- Dumped by pg_dump version 9.5.3
+
+-- Started on 2017-05-21 20:17:35
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 1 (class 3079 OID 12355)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2107 (class 0 OID 0)
+-- Dependencies: 1
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 182 (class 1259 OID 33717)
+-- Name: student; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE student (
+    id integer NOT NULL,
+    first_name character varying(45),
+    last_name character varying(45),
+    email character varying(255)
+);
+
+
+ALTER TABLE student OWNER TO postgres;
+
+--
+-- TOC entry 181 (class 1259 OID 33715)
+-- Name: student_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE student_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE student_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2108 (class 0 OID 0)
+-- Dependencies: 181
+-- Name: student_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE student_id_seq OWNED BY student.id;
+
+
+--
+-- TOC entry 1981 (class 2604 OID 33720)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY student ALTER COLUMN id SET DEFAULT nextval('student_id_seq'::regclass);
+
+
+--
+-- TOC entry 2099 (class 0 OID 33717)
+-- Dependencies: 182
+-- Data for Name: student; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY student (id, first_name, last_name, email) FROM stdin;
+1	Mary	Public	mary@luv2code.com
+2	John	Doe	john@luv2code.com
+4	Bill	Neely	bill@luv2code.com
+5	Maxwell	Dixon	max@luv2code.com
+3	Ajay	Rao	ajay@luv2code.com
+6	Belka	Belochkina-Pushistik	belka@luv2code.com
+\.
+
+
+--
+-- TOC entry 2109 (class 0 OID 0)
+-- Dependencies: 181
+-- Name: student_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('student_id_seq', 19, true);
+
+
+--
+-- TOC entry 1983 (class 2606 OID 33722)
+-- Name: pk_student; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY student
+    ADD CONSTRAINT pk_student PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2106 (class 0 OID 0)
+-- Dependencies: 6
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2017-05-21 20:17:35
+
+--
+-- PostgreSQL database dump complete
+--
+

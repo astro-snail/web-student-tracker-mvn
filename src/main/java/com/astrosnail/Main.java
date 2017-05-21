@@ -37,12 +37,12 @@ public class Main {
         // Read more here: http://wiki.eclipse.org/Jetty/Reference/Jetty_Classloading
         root.setParentLoaderPriority(true);
         
-        String classesDir = Main.class.getProtectionDomain().getCodeSource().getLocation().toExternalForm();
-        String targetDir = new File(classesDir).getParent();
+        /*String classesDir = Main.class.getProtectionDomain().getCodeSource().getLocation().toExternalForm();
+        String targetDir = new File(classesDir).getParent();*/
 
 /*        URL location = Main.class.getProtectionDomain().getCodeSource().getLocation();
         root.setWar(location.toExternalForm()); */
-        root.setWar(targetDir + "/web-student-tracker-mvn.war"); 
+        root.setWar("target/web-student-tracker-mvn.war"); 
         //final String webappDirLocation = "src/main/webapp/"; //"target/web-student-tracker-mvn/"; //"src/main/webapp/";
         //root.setDescriptor(webappDirLocation + "/WEB-INF/web.xml");
         //root.setResourceBase(webappDirLocation);

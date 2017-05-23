@@ -4,30 +4,30 @@
 <html>
 
 <head>
-	<title>Student Tracker App</title>
+	<title>Student Tracker</title>
 	
 	<link type="text/css" rel="stylesheet" href="css/style.css" >
 </head>
 
 <body>
-	<div id="wrapper">
-		<div id="header">
+	
+	<div id="container">
+        
+        <div id="header">
 			<h2>FooBar University</h2>
 		</div>
-	</div>
-
-	<div id="container">
+        
 		<div id="content">
 			<!-- Button: Add student -->
 			<input type="button" value="Add Student"
 				   onclick="window.location.href='add-student-form.jsp'; return false;"
-				   class="add-student-button"/>
+				   class="button"/>
 				   
 			<!-- Search form -->
 			<form action="StudentControllerServlet" method="GET">
 				<input type="hidden" name="command" value="SEARCH"/>
 				Search student: <input type="text" name="theSearchName" placeholder="Student's name"/>
-				<input type="submit" value="Search" class="add-student-button"/>
+				<input type="submit" value="Search" class="button"/>
 			</form>	   
 			
 			<!-- List of students -->
@@ -60,11 +60,13 @@
 						<td><a href="${deleteLink}">Delete</a></td>
 						<!-- onclick="if (!confirm('Delete this student?')) return false;" -->
 					</tr>
-				</c:forEach>
-			</table>
+				
+                </c:forEach>
+			
+            </table>
 		</div>
-	</div>
-
+	
+    </div>
 
 </body>
 

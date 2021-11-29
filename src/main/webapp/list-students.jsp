@@ -41,13 +41,13 @@
 				<c:forEach var="tempStudent" items="${STUDENT_LIST}">
 					
 					<!-- Set up an update link -->
-					<c:url var="updateLink" value="StudentControllerServlet">
+					<c:url var="updateLink" value="/">
 						<c:param name="command" value="UPDATE"></c:param>
 						<c:param name="studentId" value="${tempStudent.id}"></c:param>
 					</c:url>
 					
 					<!-- Set up an update link -->
-					<c:url var="deleteLink" value="StudentControllerServlet">
+					<c:url var="deleteLink" value="/">
 						<c:param name="command" value="DELETE"></c:param>
 						<c:param name="studentId" value="${tempStudent.id}"></c:param>
 					</c:url>

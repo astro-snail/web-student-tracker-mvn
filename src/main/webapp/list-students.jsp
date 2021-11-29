@@ -24,7 +24,7 @@
 				   class="button"/>
 				   
 			<!-- Search form -->
-			<form action="StudentControllerServlet" method="GET">
+			<form action="/" method="GET">
 				<input type="hidden" name="command" value="SEARCH"/>
 				Search student: <input type="text" name="theSearchName" placeholder="Student's name"/>
 				<input type="submit" value="Search" class="button"/>

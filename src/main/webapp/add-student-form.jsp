@@ -19,7 +19,7 @@
 		<div id="container">
 			<h3>Add Student</h3>
 			
-			<form action="StudentControllerServlet" method="POST">
+			<form action="/" method="POST">
 			
 				<input type="hidden" name="command" value="ADD"/>
 				
@@ -48,7 +48,7 @@
 			<div style="clear: both;"></div>
 			
 			<p>
-				<a href="StudentControllerServlet">Back to List</a>
+				<a href="/">Back to List</a>
 			</p>
 			
 		</div>

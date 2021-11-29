@@ -19,7 +19,7 @@
 		<div id="container">
 			<h3>Update Student</h3>
 			
-			<form action="StudentControllerServlet" method="POST">
+			<form action="/" method="POST">
 			
 				<input type="hidden" name="command" value="UPDATE"/>
 				
@@ -52,7 +52,7 @@
 			<p class="message"><b>${message}</b></p>
 			
 			<p>
-				<a href="StudentControllerServlet">Back to List</a>
+				<a href="/">Back to List</a>
 			</p>
 			
 		</div>

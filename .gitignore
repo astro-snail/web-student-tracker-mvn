@@ -1,2 +1,6 @@
-/target/
-/Users/
+target/
+.settings/
+.project
+.classpath
+.git
+*/.git/*

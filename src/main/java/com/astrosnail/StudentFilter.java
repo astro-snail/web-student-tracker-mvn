@@ -15,23 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class StudentFilter
  */
-@WebFilter(urlPatterns = "/*",
-           dispatcherTypes = {DispatcherType.REQUEST, DispatcherType.FORWARD})
-
+@WebFilter(urlPatterns = "/*", dispatcherTypes = {DispatcherType.REQUEST, DispatcherType.FORWARD})
 public class StudentFilter implements Filter {
 
     /**
      * Default constructor. 
      */
     public StudentFilter() {
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		// TODO Auto-generated method stub
 	}
 
 	/**
@@ -52,7 +48,5 @@ public class StudentFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
 	}
-
 }

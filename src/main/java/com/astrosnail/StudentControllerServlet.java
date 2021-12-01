@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class StudentControllerServlet
  */
-@WebServlet("") //StudentControllerServlet
+@WebServlet("")
 public class StudentControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -30,7 +30,6 @@ public class StudentControllerServlet extends HttpServlet {
 		super.init();
 		
 		try {
-			//new org.eclipse.jetty.plus.jndi.Resource("jdbc/web_student_tracker", dataSource);
 			studentDbUtil = new StudentDbUtil(dataSource);
 		} catch (Exception e) {
 			throw new ServletException(e);
